@@ -64,7 +64,7 @@ function AppInit() {
     const fetchAllBlogs = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:3000/api/v1/blog/get-all-blogs`, // ✅ all users blogs
+          `https://blog-backend-j816.onrender.com/api/v1/blog/get-all-blogs`, // ✅ all users blogs
           { withCredentials: true }
         );
         if (res.data.success) {
