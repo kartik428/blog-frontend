@@ -35,7 +35,7 @@ const Navbar = () => {
   const logoutHandler = async () => {
     //logout logic here
     try {
-      const res = await axios.get("http://localhost:3000/api/v1/users/logout", {
+      const res = await axios.get("https://your-backend.onrender.com/api/v1/users/logout", {
         withCredentials: true,
       });
       if (res.data.success) {

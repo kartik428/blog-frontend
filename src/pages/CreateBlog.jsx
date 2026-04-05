@@ -37,7 +37,7 @@ const CreateBlog = () => {
   const createBlogHandler = async()=>{
     try {
       dispatch(setLoading(true))
-      const res = await axios.post(`http://localhost:3000/api/v1/blog`, {title, category}, {
+      const res = await axios.post(`https://your-backend.onrender.com/api/v1/blog`, {title, category}, {
 
         headers:{
           "Content-Type":"application/json"

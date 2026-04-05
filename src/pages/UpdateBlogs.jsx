@@ -73,7 +73,7 @@ const UpdateBlogs = () => {
     try {
       dispatch(setLoading(true));
       const res = await axios.put(
-        `http://localhost:3000/api/v1/blog/${id}`,
+        `https://your-backend.onrender.com/api/v1/blog/${id}`,
         formData,
         {
           headers: {
@@ -97,7 +97,7 @@ const UpdateBlogs = () => {
 
   const togglePublishUnpublish = async (action) => {
     try {
-      const res = await axios.patch(`http://localhost:3000/api/v1/blog/${id}`, {
+      const res = await axios.patch(`https://your-backend.onrender.com/api/v1/blog/${id}`, {
         params: {
           action
         },
@@ -119,7 +119,7 @@ const UpdateBlogs = () => {
   const deleteBlogHandler = async () => {
     // To be implemented
     try {
-      const res = await axios.delete(`http://localhost:3000/api/v1/blog/delete/${id}`, {
+      const res = await axios.delete(`https://your-backend.onrender.com/api/v1/blog/delete/${id}`, {
         withCredentials: true
       });
       if (res.data.success) {

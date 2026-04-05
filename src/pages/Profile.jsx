@@ -74,7 +74,7 @@ const Profile = () => {
     try {
       dispatch(setLoading(true));
       const res = await axios.put(
-        `http://localhost:3000/api/v1/users/profile/update`,
+        `https://your-backend.onrender.com/api/v1/users/profile/update`,
         formData,
         {
           headers: {
