@@ -19,6 +19,7 @@ import axios from "axios";
 import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
 import { setBlog } from "@/redux/blogSlice";
+import { API_URL } from "@/lib/api";
 
 const UpdateBlogs = () => {
 
@@ -73,7 +74,7 @@ const UpdateBlogs = () => {
     try {
       dispatch(setLoading(true));
       const res = await axios.put(
-        `https://your-backend.onrender.com/api/v1/blog/${id}`,
+        `${API_URL}/blog/${id}`,
         formData,
         {
           headers: {
@@ -97,7 +98,7 @@ const UpdateBlogs = () => {
 
   const togglePublishUnpublish = async (action) => {
     try {
-      const res = await axios.patch(`https://your-backend.onrender.com/api/v1/blog/${id}`, {
+      const res = await axios.patch(`${API_URL}/blog/${id}`, {
         params: {
           action
         },
@@ -119,7 +120,7 @@ const UpdateBlogs = () => {
   const deleteBlogHandler = async () => {
     // To be implemented
     try {
-      const res = await axios.delete(`https://your-backend.onrender.com/api/v1/blog/delete/${id}`, {
+      const res = await axios.delete(`${API_URL}/blog/delete/${id}`, {
         withCredentials: true
       });
       if (res.data.success) {

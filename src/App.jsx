@@ -1,9 +1,5 @@
 // App.jsx
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { useEffect } from "react";
-import axios from "axios";
-import { useDispatch } from "react-redux";
-import { setBlog } from "@/redux/blogSlice";
 
 import Home from "./pages/Home.jsx";
 import About from "./pages/About.jsx";
@@ -58,25 +54,6 @@ const router = createBrowserRouter([
 ]);
 
 function AppInit() {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    const fetchAllBlogs = async () => {
-      try {
-        const res = await axios.get(
-          `https://blog-backend-j816.onrender.com/api/v1/blog/get-all-blogs`, // ✅ all users blogs
-          { withCredentials: true }
-        );
-        if (res.data.success) {
-          dispatch(setBlog(res.data.blogs));
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    };
-    fetchAllBlogs();
-  }, []);
-
   return <RouterProvider router={router} />;
 }
 

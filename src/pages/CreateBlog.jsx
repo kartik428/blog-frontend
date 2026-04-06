@@ -19,6 +19,7 @@ import { setBlog } from "@/redux/blogSlice";
 import { toast } from "sonner";
 import { setLoading } from "@/redux/authSlice";
 import { Loader2 } from "lucide-react";
+import { API_URL } from "@/lib/api";
 
 const CreateBlog = () => {
   const [title, setTitle] = useState("");
@@ -37,7 +38,7 @@ const CreateBlog = () => {
   const createBlogHandler = async()=>{
     try {
       dispatch(setLoading(true))
-      const res = await axios.post(`https://your-backend.onrender.com/api/v1/blog`, {title, category}, {
+      const res = await axios.post(`${API_URL}/blog`, {title, category}, {
 
         headers:{
           "Content-Type":"application/json"

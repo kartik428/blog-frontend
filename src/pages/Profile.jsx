@@ -24,6 +24,7 @@ import { setLoading, setUser } from "@/redux/authSlice";
 import axios from "axios";
 import { toast } from "sonner";
 import { Loader2 } from "lucide-react";
+import { API_URL } from "@/lib/api";
 
 const Profile = () => {
   const [open, setOpen] = useState(false);
@@ -74,7 +75,7 @@ const Profile = () => {
     try {
       dispatch(setLoading(true));
       const res = await axios.put(
-        `https://your-backend.onrender.com/api/v1/users/profile/update`,
+        `${API_URL}/users/profile/update`,
         formData,
         {
           headers: {

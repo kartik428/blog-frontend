@@ -20,6 +20,7 @@ import { FaHeart, FaRegHeart } from 'react-icons/fa6'
 import { toast } from 'sonner'
 import { setBlog } from '@/redux/blogSlice'
 import axios from 'axios'
+import { API_URL } from "@/lib/api";
 
 const BlogView = () => {
     const params = useParams()
@@ -82,7 +83,7 @@ const BlogView = () => {
     try {
         const action = liked ? 'dislike' : 'like';
         const res = await axios.get(
-            `https://your-backend.onrender.com/api/v1/blog/${selectedBlog._id}/${action}`,
+            `${API_URL}/blog/${selectedBlog._id}/${action}`,
             { withCredentials: true }
         );
 

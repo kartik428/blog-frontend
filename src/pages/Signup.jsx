@@ -15,6 +15,7 @@ import { toast } from "sonner";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { setLoading } from "../redux/authSlice.js";
+import { API_URL } from "@/lib/api";
 
 
 const Signup = () => {
@@ -43,7 +44,7 @@ const Signup = () => {
     try {
       dispatch(setLoading(true));
       const res = await axios.post(
-        "https://your-backend.onrender.com/api/v1/users/register",
+        `${API_URL}/users/register`,
         user,
         {
           headers: {

@@ -24,16 +24,18 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { Edit, Trash2 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "sonner";
+import { API_URL } from "@/lib/api";
 
 const YourBlog = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { blog } = useSelector((store) => store.blog);
-  console.log(blog);
+  // console.log(blog);
+
   const getOwnBlog = async () => {
     try {
       const res = await axios.get(
-        `https://your-backend.onrender.com/api/v1/blog/get-own-blogs`,
+        `${API_URL}/blog/get-own-blogs`,
         { withCredentials: true }
       );
       if (res.data.success) {
@@ -43,10 +45,11 @@ const YourBlog = () => {
       console.log(error);
     }
   };
+  
   const deleteBlog = async (id) => {
     try {
       const res = await axios.delete(
-        `https://your-backend.onrender.com/api/v1/blog/delete/${id}`,
+        `${API_URL}/blog/delete/${id}`,
         { withCredentials: true }
       );
       if (res.data.success) {
@@ -86,7 +89,7 @@ const YourBlog = () => {
                       alt=""
                       className="w-20 rounded-md hidden md:block"
                     />
-                    <h1 onClick={()=>navigate(`/blogs/${item._id}`)} className="hover:underline cursor-pointer">
+                    <h1 onClick={() => navigate(`/blogs/${item._id}`)} className="hover:underline cursor-pointer">
                       {item.title}
                     </h1>
                   </TableCell>

@@ -13,6 +13,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { setBlog } from '@/redux/blogSlice'
+import { API_URL } from "@/lib/api";
 
 const Blogs = () => {
   const [expandedId, setExpandedId] = useState(null);
@@ -28,7 +29,8 @@ const Blogs = () => {
       setLoading(true);
       try {
         const res = await axios.get(
-          `https://your-backend.onrender.com/api/v1/blog/get-published-blogs`,
+          `
+          ${API_URL}/blog/get-published-blogs`,
           { withCredentials: true }
         );
         if (res.data.success) {
