@@ -143,12 +143,12 @@ const Navbar = () => {
                           All Blogs
                           <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
                         </DropdownMenuItem>
-
+{/* 
                         <DropdownMenuItem onClick={() => navigate("/dashboard/comments")}>
                           <FaRegComment />
                           Comments
                           <DropdownMenuShortcut>⌘C</DropdownMenuShortcut>
-                        </DropdownMenuItem>
+                        </DropdownMenuItem> */}
 
                         <DropdownMenuItem onClick={() => navigate("/dashboard/write-blog")}>
                           <FaRegEdit />

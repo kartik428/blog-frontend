@@ -33,7 +33,7 @@ const Sidebar = () => {
           <ChartColumnBig />
           <span>Your Blogs</span>
         </NavLink>
-        <NavLink
+        {/* <NavLink
           to="/dashboard/comments"
           className={({ isActive }) =>
             `text-2xl  ${
@@ -45,7 +45,7 @@ const Sidebar = () => {
         >
           <FaRegComment />
           <span>Comments</span>
-        </NavLink>
+        </NavLink> */}
         <NavLink
           to="/dashboard/write-blog"
           className={({ isActive }) =>
