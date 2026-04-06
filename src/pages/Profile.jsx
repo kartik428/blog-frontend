@@ -111,18 +111,26 @@ const Profile = () => {
               {user?.occupation}
             </h1>
             <div className="flex gap-4 items-center">
-              <Link>
-                <FaFacebook className="w-6 h-6 text-gray-800 dark:text-gray-300" />
-              </Link>
-              <Link to={`/`} target="_blank">
-                <FaLinkedin className="w-6 h-6 dark:text-gray-300 text-gray-800" />
-              </Link>
-              <Link to={`/`} target="_blank">
-                <FaGithub className="w-6 h-6 dark:text-gray-300 text-gray-800" />
-              </Link>
-              <Link>
-                <FaInstagram className="w-6 h-6 text-gray-800 dark:text-gray-300" />
-              </Link>
+              {input.facebook && (
+                <Link to={input.facebook} target="_blank">
+                  <FaFacebook className="w-6 h-6 text-gray-800 dark:text-gray-300" />
+                </Link>
+              )}
+              {input.linkedin && (
+                <Link to={input.linkedin} target="_blank">
+                  <FaLinkedin className="w-6 h-6 dark:text-gray-300 text-gray-800" />
+                </Link>
+              )}
+              {input.github && (
+                <Link to={input.github} target="_blank">
+                  <FaGithub className="w-6 h-6 dark:text-gray-300 text-gray-800" />
+                </Link>
+              )}
+              {input.instagram && (
+                <Link to={input.instagram} target="_blank">
+                  <FaInstagram className="w-6 h-6 text-gray-800 dark:text-gray-300" />
+                </Link>
+              )}
             </div>
           </div>
           {/* info section  */}
