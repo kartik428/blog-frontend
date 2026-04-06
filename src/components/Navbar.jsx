@@ -24,6 +24,7 @@ import {
   DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "../components/ui/dropdown-menu";
+import { API_URL } from "@/lib/api";
 
 const Navbar = () => {
   // const user = false; //dummy user authentication status
@@ -35,7 +36,7 @@ const Navbar = () => {
   const logoutHandler = async () => {
     //logout logic here
     try {
-      const res = await axios.get("http://localhost:3000/api/v1/users/logout", {
+      const res = await axios.get(`${API_URL}/users/logout`, {
         withCredentials: true,
       });
       if (res.data.success) {

@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux'
 
 const Hero = () => {
   const navigate = useNavigate();
-  const { user } = useSelector(store => store.auth) // ✅ apna auth slice naam check karo
+  const { user } = useSelector(store => store.auth) 
 
   const handleGetStarted = () => {
     if (user) {
@@ -26,7 +26,7 @@ const Hero = () => {
             Stay ahead with in-depth articles, tutorials, and insights on web development, digital marketing, and tech innovations.
           </p>
           <div className="flex space-x-4">
-            {/* ✅ onClick se handle karo */}
+            {/* onClick se handle karo */}
             <Button
               onClick={handleGetStarted}
               className="text-lg bg-black text-white"
