@@ -3,7 +3,7 @@ import { Button } from "./ui/button";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import Logo from "../assets/logo.png";
 import { Search, User } from "lucide-react";
-import { FaMoon, FaRegComment, FaSun, FaRegEdit  } from "react-icons/fa";
+import { FaMoon, FaRegComment, FaSun, FaRegEdit } from "react-icons/fa";
 import { Avatar } from "@radix-ui/react-avatar";
 import { AvatarFallback, AvatarImage } from "./ui/avatar";
 import { useDispatch, useSelector } from "react-redux";
@@ -123,30 +123,41 @@ const Navbar = () => {
                     <DropdownMenuContent className="w-56" align="start">
                       <DropdownMenuLabel>My Account</DropdownMenuLabel>
                       <DropdownMenuGroup>
+
                         <DropdownMenuItem onClick={() => navigate("/dashboard/profile")}>
-                          <User/>
-                          <span>Profile</span> 
+                          <User />
+                          <span>Profile</span>
                           <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
                         </DropdownMenuItem>
+
                         <DropdownMenuItem onClick={() => navigate("/dashboard/your-blog")}>
-                       <LuChartColumnIncreasing />
+                          <LuChartColumnIncreasing />
                           Your Blogs
                           <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
                         </DropdownMenuItem>
+
+                        <DropdownMenuItem onClick={() => navigate("/blogs")}
+                          className="md:hidden"
+                        >
+                          <LuChartColumnIncreasing />
+                          All Blogs
+                          <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
+                        </DropdownMenuItem>
+
                         <DropdownMenuItem onClick={() => navigate("/dashboard/comments")}>
-                        
                           <FaRegComment />
                           Comments
                           <DropdownMenuShortcut>⌘C</DropdownMenuShortcut>
                         </DropdownMenuItem>
-                          <DropdownMenuItem onClick={() => navigate("/dashboard/write-blog")}>
+
+                        <DropdownMenuItem onClick={() => navigate("/dashboard/write-blog")}>
                           <FaRegEdit />
                           Write Blog
                           <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
                         </DropdownMenuItem>
                       </DropdownMenuGroup>
-                       <DropdownMenuSeparator />
-                      <DropdownMenuItem onClick={logoutHandler}> 
+                      <DropdownMenuSeparator />
+                      <DropdownMenuItem onClick={logoutHandler}>
                         Log out
                         <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
                       </DropdownMenuItem>
