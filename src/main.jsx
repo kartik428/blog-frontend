@@ -1,4 +1,4 @@
-import { StrictMode } from "react";
+// import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
@@ -12,7 +12,7 @@ import { persistStore } from "redux-persist";
 const persister = persistStore(store);
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
+  // <StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persister}>
         <ThemeProvider>
@@ -21,5 +21,5 @@ createRoot(document.getElementById("root")).render(
         <Toaster />
       </PersistGate>
     </Provider>
-  </StrictMode>
+  // {/* </StrictMode> */}
 );
